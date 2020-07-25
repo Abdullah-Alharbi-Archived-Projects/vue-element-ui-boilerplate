@@ -4,6 +4,7 @@
 - Vue-Router
 - Vuex
 - Element UI
+- Node-Scss 
 
 
 ### define a new layout

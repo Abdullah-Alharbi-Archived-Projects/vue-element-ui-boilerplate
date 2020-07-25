@@ -3,6 +3,14 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 
+
+// fix "Error: Avoided redundant navigation to current location: '/'"
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err);
+};
+
+
 Vue.use(VueRouter);
 
 const routes = [

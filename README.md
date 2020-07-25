@@ -8,13 +8,37 @@
 
 
 ### define a new layout
-1. create file at `src/layouts`
+1. create file at `src/layouts` such as:
+```
+<template>
+  <div class="my-custom-layout">
+
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'my-custom-layout'
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>
+
+```
 2. go to `src/router/index.js`
 3. add the following to any route to use the newly created layout:
 ```
 meta: {
     layout: 'my-layout'
 }
+```
+4. go to `src/main.js` and add the following:
+```
+import MyCustomLayout from "./layouts/MyCustomLayout.vue";
+
+Vue.component(`${MyCustomLayout.name}-layout`, MyCustomLayout); // you have to add `-layout` in the end
 ```
 
 ##### example:

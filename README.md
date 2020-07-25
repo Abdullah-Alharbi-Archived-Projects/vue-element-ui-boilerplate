@@ -12,7 +12,7 @@
 ```
 <template>
   <div class="my-custom-layout">
-    <slot />
+    <slot /> <!-- this will render everything here -->
   </div>
 </template>
 
